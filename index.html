@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Player</title>
+    <style>
+        body { 
+            background: radial-gradient(circle, #1a1a1a 0%, #000 100%); 
+            color: #fff; margin: 0; font-family: sans-serif; 
+            display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; 
+        }
+        .video-box { 
+            position: relative; width: 90%; max-width: 500px; aspect-ratio: 16/9; 
+            background: #000; border: 1px solid #444; border-radius: 15px; 
+            box-shadow: 0 15px 40px rgba(0,0,0,0.8); cursor: pointer; 
+            display: flex; align-items: center; justify-content: center; 
+        }
+        /* Tombol sedikit berbeda dengan aksen biru agar kamu tahu ini link Adsterra */
+        .play-circle { 
+            width: 70px; height: 70px; background: rgba(0, 150, 255, 0.1); 
+            border: 2px solid rgba(0, 150, 255, 0.6); border-radius: 50%; 
+            display: flex; align-items: center; justify-content: center; backdrop-filter: blur(5px); 
+        }
+        .play-circle::after { 
+            content: ""; border-style: solid; border-width: 15px 0 15px 25px; 
+            border-color: transparent transparent transparent #0096ff; margin-left: 5px; 
+        }
+        .text-info { margin-top: 20px; color: #888; font-size: 13px; letter-spacing: 1px; text-transform: uppercase; }
+    </style>
+</head>
+<body>
+
+    <div class="video-box" onclick="gasAdsterra()">
+        <div class="play-circle"></div>
+    </div>
+    <div class="text-info">KLIK UNTUK MEMUTAR VIDEO</div>
+
+    <script>
+        // 1. LINK ADSTERRA KAMU
+        const linkIklan = "https://www.effectivegatecpm.com/f2f5c6b97?key=258d32b638981c8276aa97fbc21c3199"; 
+
+        // 2. SKRIP SMART UNIVERSAL
+        const params = new URLSearchParams(window.location.search);
+        let targetLink = params.get('link');
+
+        if (targetLink) {
+            targetLink = decodeURIComponent(targetLink);
+        } else {
+            targetLink = "https://google.com";
+        }
+
+        function gasAdsterra() {
+            // Buka Iklan Adsterra
+            window.open(linkIklan, '_blank');
+            // Alihkan ke video
+            setTimeout(() => {
+                window.location.href = targetLink;
+            }, 800);
+        }
+    </script>
+</body>
+</html>
