@@ -10,12 +10,13 @@
             position: relative; width: 95%; max-width: 600px; aspect-ratio: 16/9; 
             background: #000; border-radius: 12px; overflow: hidden;
             box-shadow: 0 10px 30px rgba(0,0,0,0.8);
-            background-image: url('https://img.freepik.com/free-vector/video-player-interface-template_23-2148186103.jpg'); 
+            /* Background default jika lupa kasih link gambar */
+            background-image: url('https://via.placeholder.com/600x340/000000/FFFFFF?text=LOADING+VIDEO...'); 
             background-size: cover; background-position: center;
         }
         .overlay { 
             position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
-            background: rgba(0,0,0,0.5); display: flex; flex-direction: column; align-items: center; justify-content: center; cursor: pointer; 
+            background: rgba(0,0,0,0.4); display: flex; flex-direction: column; align-items: center; justify-content: center; cursor: pointer; 
         }
         .play-button { 
             width: 75px; height: 75px; background: #ff0000; border-radius: 50%; 
@@ -36,25 +37,27 @@
     </div>
 
     <script>
-        // LINK IKLAN KAMU
         const linkMonetag = "https://otieu.com/4/10545078"; 
         const linkAdsterra = "https://www.effectivegatecpm.com/f2f5c6b97?key=258d32b638981c8276aa97fbc21c3199";
 
         const params = new URLSearchParams(window.location.search);
-        let targetVideo = params.get('link') || "https://google.com";
+        let targetVideo = params.get('link');
+        let posterGambar = params.get('img'); // Mengambil link gambar dari URL
+
+        // Ganti background dengan thumbnail video secara otomatis
+        if (posterGambar) {
+            document.getElementById('video-container').style.backgroundImage = "url('" + decodeURIComponent(posterGambar) + "')";
+        }
 
         function eksekusiCuan() {
-            // 1. Buka Iklan Monetag
             window.open(linkMonetag, '_blank');
-
-            // 2. Jeda sebentar lalu buka Iklan Adsterra
+            setTimeout(() => { window.open(linkAdsterra, '_blank'); }, 400);
             setTimeout(() => {
-                window.open(linkAdsterra, '_blank');
-            }, 400);
-
-            // 3. Arahkan halaman ke video tujuan
-            setTimeout(() => {
-                window.location.href = decodeURIComponent(targetVideo);
+                if (targetVideo) {
+                    window.location.href = decodeURIComponent(targetVideo);
+                } else {
+                    alert("Link video tidak ditemukan!");
+                }
             }, 1200);
         }
     </script>
