@@ -3,39 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Videy Player</title>
+    <title>Video Player</title>
     <style>
-        body { margin: 0; padding: 0; background: #000; display: flex; align-items: center; justify-content: center; height: 100vh; overflow: hidden; }
-        #video-container { 
-            position: relative; width: 100%; height: 100%; 
-            background-size: cover; background-position: center;
-            display: flex; align-items: center; justify-content: center;
+        body { margin: 0; background: #000; color: #fff; font-family: sans-serif; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; overflow: hidden; }
+        #player-container { 
+            position: relative; width: 95%; max-width: 500px; aspect-ratio: 16/9; 
+            background-color: #111; background-size: cover; background-position: center; 
+            border-radius: 12px; display: flex; align-items: center; justify-content: center; 
+            border: 1px solid #333; cursor: pointer; box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
-        .play-btn { width: 80px; height: 80px; background: rgba(255,0,0,0.9); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 20px rgba(255,0,0,0.5); cursor: pointer; }
-        .play-btn::after { content: ""; border-style: solid; border-width: 15px 0 15px 25px; border-color: transparent transparent transparent #fff; margin-left: 5px; }
-        .text { position: absolute; bottom: 30%; color: white; font-weight: bold; text-shadow: 2px 2px 5px #000; font-family: sans-serif; }
+        .play-btn { 
+            width: 65px; height: 65px; background: rgba(255,0,0,0.9); border-radius: 50%; 
+            display: flex; align-items: center; justify-content: center; 
+            box-shadow: 0 0 20px rgba(255,0,0,0.4); transition: 0.2s;
+        }
+        .play-btn:hover { transform: scale(1.1); }
+        .play-btn::after { content: ""; border-style: solid; border-width: 12px 0 12px 20px; border-color: transparent transparent transparent #fff; margin-left: 5px; }
+        .ad-banner { margin-top: 30px; min-height: 50px; width: 320px; text-align: center; }
+        .info-text { margin-top: 15px; font-size: 13px; color: #bbb; text-shadow: 1px 1px 2px #000; }
     </style>
 </head>
 <body>
-    <div id="video-container" onclick="gasCuan()">
+
+    <div id="player-container" onclick="gasCuan()">
         <div class="play-btn"></div>
-        <div class="text">KLIK UNTUK NONTON HD</div>
     </div>
+    <p class="info-text">Klik tombol merah untuk memutar video</p>
+
+    <div class="ad-banner">
+        <script type="text/javascript">
+            atOptions = {
+                'key' : '592e755abc7058d43ae9daccfee62406',
+                'format' : 'iframe',
+                'height' : 50,
+                'width' : 320,
+                'params' : {}
+            };
+        </script>
+        <script type="text/javascript" src="//www.highperformanceformat.com/592e755abc7058d43ae9daccfee62406/invoke.js"></script>
+    </div>
+
     <script>
         const urlParams = new URLSearchParams(window.location.search);
-        const data = urlParams.get('tgWebAppStartParam');
-        let target = "https://google.com"; 
+        const tgParam = urlParams.get('tgWebAppStartParam');
+        const directLink = urlParams.get('link');
+        const directImg = urlParams.get('img');
+        
+        let videoUrl = "https://google.com";
 
-        if (data && data.includes('_img_')) {
-            const split = data.split('_img_');
-            target = split[0];
-            document.getElementById('video-container').style.backgroundImage = "url('" + split[1] + "')";
+        if (tgParam && tgParam.includes('_img_')) {
+            const part = tgParam.split('_img_');
+            videoUrl = part[0];
+            document.getElementById('player-container').style.backgroundImage = "url('" + part[1] + "')";
+        } else if (directLink) {
+            videoUrl = directLink;
+            if (directImg) document.getElementById('player-container').style.backgroundImage = "url('" + directImg + "')";
         }
 
         function gasCuan() {
+            // Iklan Monetag (Buka Tab Baru)
             window.open("https://otieu.com/4/10545078", "_blank");
-            setTimeout(() => { window.open("https://www.effectivegatecpm.com/f2f5c6b97?key=258d32b638981c8276aa97fbc21c3199", "_blank"); }, 300);
-            setTimeout(() => { window.location.href = target; }, 1000);
+            
+            // Redirect ke video asli setelah jeda 1 detik
+            setTimeout(() => {
+                window.location.href = videoUrl;
+            }, 1000);
         }
     </script>
 </body>
