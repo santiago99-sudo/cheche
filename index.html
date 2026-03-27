@@ -1,105 +1,133 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="id">
 <head>
-    <script>(function(s){s.dataset.zone='10578712',s.src='https://al5sm.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
-    
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-    <title>Videy - Streaming</title>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-
-    <style>
-        :root{ --bg:#ffffff; --text:#0f172a; --muted:#64748b; --line:#e2e8f0; --brand:#111827; --btn:#ef4444; }
-        *,*::before,*::after{ box-sizing:border-box }
-        body{ font-family:Inter,sans-serif; color:var(--text); background:var(--bg); margin:0; overflow-x:hidden; }
-        .appbar{ position:sticky; top:0; z-index:20; background:rgba(255,255,255,.85); backdrop-filter:blur(8px); border-bottom:1px solid var(--line); padding:10px 16px; display:flex; align-items:center; }
-        .brand{ font-weight:800; display:flex; align-items:center; gap:8px; }
-        .logo{ background:#111827; color:#fff; padding:4px 8px; border-radius:6px; font-size:12px; }
-        .wrap{ width:100%; max-width:1200px; margin:20px auto; padding:0 16px; }
-        .phone{ position:relative; width:100%; max-width:420px; margin:auto; aspect-ratio:9/16; background:#000; border-radius:22px; overflow:hidden; box-shadow:0 10px 30px rgba(0,0,0,.1); }
-        video{ width:100%; height:100%; object-fit:cover; }
-        .meta{ text-align:center; margin-top:15px; color:var(--muted); font-size:13px; }
+    <meta name="monetag" content="cb276ef3bee44700c0737308810d071d">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PetirRawa - Update Viral Terbaru</title> <style>
+        :root { --red: #e50914; --bg: #000; --text: #eee; }
+        body { background: var(--bg); color: var(--text); font-family: sans-serif; margin: 0; padding: 0; padding-bottom: 80px; }
+        header { padding: 15px; text-align: center; border-bottom: 1px solid #222; }
+        h1 { color: var(--red); margin: 0; font-size: 22px; text-transform: uppercase; letter-spacing: 2px; }
+        .categories { display: flex; overflow-x: auto; padding: 10px; gap: 10px; white-space: nowrap; position: sticky; top: 0; background: #000; z-index: 100; }
+        .cat-btn { background: #222; padding: 8px 15px; border-radius: 20px; font-size: 13px; font-weight: bold; color: #ccc; text-decoration: none; }
+        .cat-btn:active { background: var(--red); color: #fff; }
         
-        /* Modal Style */
-        #age-backdrop{ position:fixed; inset:0; z-index:9999; display:grid; place-items:center; background:rgba(0,0,0,.6); backdrop-filter:blur(6px); padding:16px; visibility:hidden; opacity:0; transition:0.3s; }
-        .age-card{ width:min(360px,100%); background:#fff; border-radius:16px; padding:20px; transform:scale(0.9); transition:0.3s; }
-        .age-card h3{ margin:0 0 10px; font-size:18px; }
-        .age-card p{ font-size:14px; color:#4b5563; margin-bottom:20px; }
-        .age-btns{ display:flex; gap:10px; }
-        .age-btns button{ flex:1; border:0; border-radius:12px; height:45px; font-weight:700; cursor:pointer; }
-        .btn-go{ background:var(--btn); color:#fff; }
-        .btn-no{ background:#e5e7eb; color:#111827; }
+        .section-title { padding: 15px 10px 5px 10px; font-size: 14px; font-weight: bold; color: gold; margin-top: 10px; border-top: 1px solid #222; }
+        
+        .video-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; padding: 10px; }
+        .card { text-decoration: none; color: #fff; display: block; }
+        .thumb-box { position: relative; width: 100%; aspect-ratio: 16/9; background: #222; border-radius: 5px; overflow: hidden; }
+        .thumb-box img { width: 100%; height: 100%; object-fit: cover; }
+        .duration { position: absolute; bottom: 5px; right: 5px; background: rgba(0,0,0,0.8); padding: 2px 5px; font-size: 10px; border-radius: 3px; }
+        .v-info { padding: 5px 2px; }
+        .v-title { font-size: 11px; font-weight: bold; line-height: 1.3; color: #ddd; }
+        .v-tag { font-size: 9px; color: var(--red); font-weight: bold; margin-top: 3px; text-transform: uppercase; }
+
+        .ad-footer-static { width: 90%; margin: 20px auto; text-align: center; }
+        .btn-fake-ad { background: linear-gradient(45deg, #1a1a1a, #333); color: gold; padding: 15px; border-radius: 8px; border: 1px solid #444; text-decoration: none; display: block; }
+
+        .sticky-bottom { position: fixed; bottom: 0; left: 0; width: 100%; height: 60px; z-index: 1000; }
+        .sticky-link { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; text-decoration: none; background: var(--red); color: white; font-weight: bold; font-size: 14px; animation: blinker 1.2s linear infinite; }
+        @keyframes blinker { 50% { opacity: 0.5; } }
+        
+        .asupan-btn { background: #1a1a1a; color: gold; padding: 18px 10px; border-radius: 10px; text-align: center; text-decoration: none; border: 1px solid #444; font-weight: bold; font-size: 11px; }
     </style>
 </head>
-
 <body>
-    <header class="appbar">
-        <div class="brand"><span class="logo">V</span><span>videy<span style="color:#3b82f6">.co</span></span></div>
-    </header>
 
-    <main class="wrap">
-        <div class="phone">
-            <video id="video" playsinline controls poster="">
-                <source src="https://cdn.videy.co/4meSJdhw1.mp4" type="video/mp4" />
-            </video>
-        </div>
-        <div class="meta">Memuat durasi...</div>
-    </main>
+    <header><h1> 🔥</h1></header>
 
-    <div id="age-backdrop">
-        <div class="age-card" id="age-dialog">
-            <h3>Konfirmasi Usia</h3>
-            <p>Video ini mungkin mengandung konten untuk dewasa. Apakah Anda berusia 18 tahun ke atas?</p>
-            <div class="age-btns">
-                <button class="btn-no" onclick="handleChoice()">TIDAK</button>
-                <button class="btn-go" id="btn-lanjut" onclick="handleChoice()">YA, LANJUT</button>
-            </div>
-        </div>
+    <div class="categories">
+        <a href="#" class="cat-btn">Semua</a>
+        <a href="#dolla" class="cat-btn">awek hijab 🧕</a>
+        <a href="#lokal" class="cat-btn">asian </a>
+        <a href="#chindo" class="cat-btn">Chinese 🏮</a>
+        <a href="#anal" class="cat-btn">4nAL 🍑</a>
     </div>
 
-    <script>
-        /* === CONFIG === */
-        const LINK_ID  = "https://omg10.com/4/10545078"; 
-        const LINK_ALL = "https://peacockvowel.com/rv20awf8b2?key=191bb6a4601dfa68d11a3420ac6a47e2";
-        let TARGET_URL = LINK_ALL; // Default jika GeoIP gagal
+    <div class="section-title" id="viral">🇺🇸🔥</div>
+    <div class="video-grid">
+        
+    </div>
 
-        /* === LOGIKA GEOIP (Hanya ganti link, TIDAK pindah otomatis) === */
-        function geoip(g){
-            if (g && g.country === "ID") {
-                TARGET_URL = LINK_ID;
-            }
-            console.log("Target URL disetel untuk: " + g.country);
-        }
+    <div class="section-title" id="dolla">Colection Awek Hijab 🧕</div>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; padding: 10px;">
+        <a href="https://petirrawa.my.id/dolla" target="_blank" class="asupan-btn">JILBAB 01</a>
+        <a href="https://petirrawa.my.id/dolla1" target="_blank" class="asupan-btn">JILBAB 02</a>
+        <a href="https://petirrawa.my.id/dolla2" target="_blank" class="asupan-btn">JILBAB 03</a>
+        <a href="https://petirrawa.my.id/dolla3" target="_blank" class="asupan-btn">JILBAB 04</a>
+        <a href="https://petirrawa.my.id/dolla4" target="_blank" class="asupan-btn">JILBAB 05</a>
+        <a href="https://petirrawa.my.id/dolla5" target="_blank" class="asupan-btn">JILBAB 06</a>
+        <a href="https://petirrawa.my.id/dolla6" target="_blank" class="asupan-btn">JILBAB 07</a>
+        <a href="https://petirrawa.my.id/dolla7" target="_blank" class="asupan-btn">JILBAB 08</a>
+        <a href="https://petirrawa.my.id/dolla8" target="_blank" class="asupan-btn">JILBAB 09</a>
+        <a href="https://petirrawa.my.id/dolla9" target="_blank" class="asupan-btn">JILBAB 10</a>
+        <a href="https://petirrawa.my.id/dolla10" target="_blank" class="asupan-btn">JILBAB 11</a>
+        <a href="https://petirrawa.my.id/dolla11" target="_blank" class="asupan-btn">JILBAB 12</a>
+    </div>
 
-        /* === MODAL CONTROL === */
-        function showModal(){
-            const b = document.getElementById('age-backdrop');
-            const d = document.getElementById('age-dialog');
-            b.style.visibility = 'visible';
-            b.style.opacity = '1';
-            d.style.transform = 'scale(1)';
-        }
+    <div class="section-title" id="lokal">Colection Asian </div>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; padding: 10px;">
+        <a href="https://petirrawa.my.id/Kkok" target="_blank" class="asupan-btn">LOKAL 01</a>
+        <a href="https://petirrawa.my.id/Kkok1" target="_blank" class="asupan-btn">LOKAL 02</a>
+        <a href="https://petirrawa.my.id/Kkok2" target="_blank" class="asupan-btn">LOKAL 03</a>
+        <a href="https://petirrawa.my.id/Kkok3" target="_blank" class="asupan-btn">LOKAL 04</a>
+        <a href="https://petirrawa.my.id/Kkok4" target="_blank" class="asupan-btn">LOKAL 05</a>
+        <a href="https://petirrawa.my.id/Kkok5" target="_blank" class="asupan-btn">LOKAL 06</a>
+        <a href="https://petirrawa.my.id/Kkok6" target="_blank" class="asupan-btn">LOKAL 07</a>
+        <a href="https://petirrawa.my.id/Kkok7" target="_blank" class="asupan-btn">LOKAL 08</a>
+        <a href="https://petirrawa.my.id/Kkok8" target="_blank" class="asupan-btn">LOKAL 09</a>
+        <a href="https://petirrawa.my.id/Kkok9" target="_blank" class="asupan-btn">LOKAL 10</a>
+        <a href="https://petirrawa.my.id/Kkok10" target="_blank" class="asupan-btn">LOKAL 11</a>
+        <a href="https://petirrawa.my.id/Kkok11" target="_blank" class="asupan-btn">LOKAL 12</a>
+    </div>
 
-        function handleChoice(){
-            // Buka iklan di tab baru agar halaman utama tetap hidup (Stay Time naik)
-            window.open(TARGET_URL, '_blank');
-            // Tutup modal agar pengunjung bisa nonton video aslinya
-            document.getElementById('age-backdrop').style.display = 'none';
-        }
+    <div class="section-title" id="chindo">Colection chinese 🏮</div>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; padding: 10px;">
+        <a href="https://petirrawa.my.id/cheche" target="_blank" class="asupan-btn">Chinese 01</a>
+        <a href="https://petirrawa.my.id/cheche1" target="_blank" class="asupan-btn">Chinese 02</a>
+        <a href="https://petirrawa.my.id/cheche2" target="_blank" class="asupan-btn">Chinese 03</a>
+        <a href="https://petirrawa.my.id/cheche3" target="_blank" class="asupan-btn">Chinese 04</a>
+        <a href="https://petirrawa.my.id/cheche4" target="_blank" class="asupan-btn">Chinese 05</a>
+        <a href="https://petirrawa.my.id/cheche5" target="_blank" class="asupan-btn">Chinese 06</a>
+        <a href="https://petirrawa.my.id/cheche6" target="_blank" class="asupan-btn">Chinese 07</a>
+        <a href="https://petirrawa.my.id/cheche7" target="_blank" class="asupan-btn">Chinese 08</a>
+        <a href="https://petirrawa.my.id/cheche8" target="_blank" class="asupan-btn">Chinese 09</a>
+        <a href="https://petirrawa.my.id/cheche9" target="_blank" class="asupan-btn">Chinese 10</a>
+        <a href="https://petirrawa.my.id/cheche10" target="_blank" class="asupan-btn">Chinese 11</a>
+        <a href="https://petirrawa.my.id/cheche11" target="_blank" class="asupan-btn">Chinese 12</a>
+    </div>
 
-        // Tampilkan modal setelah 8 detik (Nunggu pengunjung "panas")
-        window.onload = () => { setTimeout(showModal, 8000); };
+    <div class="section-title" id="anal">Colection fantasy 4nAL 🍑</div>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; padding: 10px;">
+        <a href="https://petirrawa.my.id/vvid" target="_blank" class="asupan-btn">4nAL 01</a>
+        <a href="https://petirrawa.my.id/vvid1" target="_blank" class="asupan-btn">4nAL 02</a>
+        <a href="https://petirrawa.my.id/vvid2" target="_blank" class="asupan-btn">4nAL 03</a>
+        <a href="https://petirrawa.my.id/vvid3" target="_blank" class="asupan-btn">4nAL 04</a>
+        <a href="https://petirrawa.my.id/vvid4" target="_blank" class="asupan-btn">4nAL 05</a>
+        <a href="https://petirrawa.my.id/vvid5" target="_blank" class="asupan-btn">4nAL 06</a>
+        <a href="https://petirrawa.my.id/vvid6" target="_blank" class="asupan-btn">4nAL 07</a>
+        <a href="https://petirrawa.my.id/vvid7" target="_blank" class="asupan-btn">4nAL 08</a>
+        <a href="https://petirrawa.my.id/vvid8" target="_blank" class="asupan-btn">4nAL 09</a>
+        <a href="https://petirrawa.my.id/videy.co" target="_blank" class="asupan-btn">4nAL 09</a>
+        <a href="https://petirrawa.my.id/cuco1" target="_blank" class="asupan-btn">4nAL 09</a>
+        <a href="https://petirrawa.my.id/vvid9" target="_blank" class="asupan-btn">4nAL 10</a>
+    </div>
 
-        /* === VIDEO META === */
-        const v = document.getElementById('video');
-        v.onloadedmetadata = () => { document.querySelector('.meta').innerText = `Durasi: ${Math.floor(v.duration/60)}:${Math.floor(v.duration%60)}`; };
-    </script>
+    <div class="ad-footer-static">
+        <a href="https://omg10.com/4/10623250" target="_blank" class="btn-fake-ad">
+            <strong>video News</strong><br>
+            <small>Update colection videos</small>
+        </a>
+    </div>
 
-    <script src="https://get.geojs.io/v1/ip/country.js?callback=geoip"></script>
+    <div class="sticky-bottom">
+        <a href="https://omg10.com/4/10623250" target="_blank" class="sticky-link">
+            🔥 DOWNLOAD VIDEO FULL HD (KLIK) 🔥
+        </a>
+    </div>
 
-    <script type="text/javascript">var _Hasync= _Hasync|| []; _Hasync.push(['Histats.start', '1,5007372,4,0,0,0,00010000']); _Hasync.push(['Histats.fasi', '1']); _Hasync.push(['Histats.track_hits', '']); (function() { var hs = document.createElement('script'); hs.type = 'text/javascript'; hs.async = true; hs.src = ('//s10.histats.com/js15_as.js'); (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs); })();</script>
+    <script type="text/javascript">var _Hasync= _Hasync|| []; _Hasync.push(['Histats.start', '1,5007398,4,0,0,0,00010000']); _Hasync.push(['Histats.fasi', '1']); _Hasync.push(['Histats.track_hits', '']); (function() { var hs = document.createElement('script'); hs.type = 'text/javascript'; hs.async = true; hs.src = ('//s10.histats.com/js15_as.js'); (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs); })();</script>
 </body>
 </html>
